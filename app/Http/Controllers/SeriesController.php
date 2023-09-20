@@ -11,13 +11,14 @@ class SeriesController extends Controller
 {
     public function index(Request $request)
     {
-        //$series = Serie::all();
-        $series = Serie::query()->orderBy('nome')->get();
+         $series = Serie::all();
+        // $series = Serie::query()->orderBy('nome')->get();
         $mensagemSucesso = session('mensagem.sucesso');
-        $request->session()->forget('mensagem.sucesso');
+        //$request->session()->forget('mensagem.sucesso');
 
 
-        return view('series.index')->with('series', $series)->with('mensagemSucesso, $mensagemSucesso');
+        return view('series.index')->with('series', $series)
+        ->with('mensagemSucesso, $mensagemSucesso');
     }
 
     public function create()
@@ -43,6 +44,8 @@ class SeriesController extends Controller
 
     public function edit(Serie $series)
     {
+
+       // dd($series->temporadas());
         return view('series.edit')->with('serie', $series);
     }
 
