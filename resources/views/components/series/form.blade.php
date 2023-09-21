@@ -1,4 +1,4 @@
-    <form action="{{ $action }}" method="post">
+    <!-- <form action="{{ $action }}" method="post">
         @csrf
 
         @if($update)
@@ -13,4 +13,4 @@
                      @isset($nome)value="{{ $nome }}@endisset">
         </div>
         <button type="submit" class="btn btn-primary">Adicionar</button>
-    </form>
+    </form> -->
